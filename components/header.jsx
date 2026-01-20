@@ -1,4 +1,3 @@
-"use client"
 import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,14 +6,14 @@ import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { LayoutDashboard, StarsIcon, ChevronDown, FileText, PenBox, GraduationCap } from "lucide-react";
+import { checkUser } from "@/lib/checkUser";
 
-
-const Header = () => {
+const Header = async () => {
+  await checkUser();
+  
   return (
     <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50
     support-[backdrop-filter]:bg-background/60">
