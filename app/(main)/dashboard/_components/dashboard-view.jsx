@@ -48,22 +48,30 @@ const DashboardView = ({insights}) => {
     new Date(insights.nextUpdate),
     { addSuffix: true }
   );
+
     return  <div className="space-y-6">
+
         <div className="flex justify-between items-center">
             <Badge variant="outline">Last updated: {lastUpdateDate}</Badge>
         </div>
 
-        <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <Card>
-                <CardHeader>
-                    <CardTitle>Market Outlook</CardTitle>
-                    <OutlookIcon className={`h-4 w-4 ${outlookColor}`}/>
-                </CardHeader>
-                <CardContent>
-                    <p>Card Content</p>
-                </CardContent>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">
+                Market Outlook
+                </CardTitle>
+                <OutlookIcon className={`h-4 w-4 ${outlookColor}`} />
+            </CardHeader>
+            <CardContent>
+                <div className="text-2xl font-bold">{insights.marketOutlook}</div>
+                <p className="text-xs text-muted-foreground">
+                Next update {nextUpdateDistance}
+                </p>
+            </CardContent>
             </Card>
         </div>
+        
     </div>;
 };
 
