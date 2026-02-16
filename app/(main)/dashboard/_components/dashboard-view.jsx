@@ -71,7 +71,7 @@ const DashboardView = ({insights}) => {
             </CardContent>
             </Card>
         </div>
-        
+
     </div>;
 };
 
