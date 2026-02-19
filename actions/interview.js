@@ -14,7 +14,7 @@ export async function generatequiz()
 
     const user = await db.user.findUnique({
         where: {
-            clerUserId: userId,
+            clerkUserId: userId,
         },
     });
 
