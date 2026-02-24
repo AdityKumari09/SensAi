@@ -13,6 +13,7 @@ import { Loader2 } from "lucide-react";
 import QuizResult from "./quiz-result";
 
 
+
 const Quiz = () => {
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
